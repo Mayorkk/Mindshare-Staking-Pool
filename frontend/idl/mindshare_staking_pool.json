@@ -1,0 +1,22 @@
+{
+  "version": "0.1.0",
+  "name": "mindshare_staking_pool",
+  "instructions": [],
+  "accounts": [
+    {
+      "name": "ProgramState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {"name": "admin", "type": "publicKey"},
+          {"name": "totalPools", "type": "u64"},
+          {"name": "isPaused", "type": "bool"},
+          {"name": "bump", "type": "u8"}
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "CzSrtvHksDXtM9nFpwGuQ3QQVwNTEXD6jPUjkpqwMjhd"
+  }
+}
