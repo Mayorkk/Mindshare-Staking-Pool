@@ -1,14 +1,20 @@
-{
+/**
+ * Program IDL in camelCase format in order to be used in JS/TS.
+ *
+ * Note that this is only a type helper and is not the actual IDL. The original
+ * IDL can be found at `target/idl/mindshare_staking_pool.json`.
+ */
+export type MindshareStakingPool = {
   "address": "CzSrtvHksDXtM9nFpwGuQ3QQVwNTEXD6jPUjkpqwMjhd",
   "metadata": {
-    "name": "mindshare_staking_pool",
+    "name": "mindshareStakingPool",
     "version": "0.1.0",
     "spec": "0.1.0",
     "description": "Created with Anchor"
   },
   "instructions": [
     {
-      "name": "claim_rewards",
+      "name": "claimRewards",
       "discriminator": [
         4,
         144,
@@ -25,7 +31,7 @@
           "writable": true
         },
         {
-          "name": "user_stake",
+          "name": "userStake",
           "writable": true,
           "pda": {
             "seeds": [
@@ -51,30 +57,30 @@
               {
                 "kind": "account",
                 "path": "user_stake.user",
-                "account": "UserStake"
+                "account": "userStake"
               }
             ]
           }
         },
         {
-          "name": "token_mint"
+          "name": "tokenMint"
         },
         {
-          "name": "user_token_account",
+          "name": "userTokenAccount",
           "writable": true
         },
         {
-          "name": "reward_vault",
+          "name": "rewardVault",
           "writable": true
         },
         {
-          "name": "token_program"
+          "name": "tokenProgram"
         }
       ],
       "args": []
     },
     {
-      "name": "create_pool",
+      "name": "createPool",
       "discriminator": [
         233,
         146,
@@ -102,13 +108,13 @@
               },
               {
                 "kind": "arg",
-                "path": "pool_id"
+                "path": "poolId"
               }
             ]
           }
         },
         {
-          "name": "program_state",
+          "name": "programState",
           "writable": true,
           "pda": {
             "seeds": [
@@ -139,38 +145,38 @@
           "signer": true
         },
         {
-          "name": "token_mint"
+          "name": "tokenMint"
         },
         {
-          "name": "system_program",
+          "name": "systemProgram",
           "address": "11111111111111111111111111111111"
         }
       ],
       "args": [
         {
-          "name": "pool_id",
+          "name": "poolId",
           "type": "u64"
         },
         {
-          "name": "max_stake_amount",
+          "name": "maxStakeAmount",
           "type": "u64"
         },
         {
-          "name": "min_lock_period",
+          "name": "minLockPeriod",
           "type": "i64"
         },
         {
-          "name": "slashing_rate",
+          "name": "slashingRate",
           "type": "u16"
         },
         {
-          "name": "base_reward_rate",
+          "name": "baseRewardRate",
           "type": "u64"
         }
       ]
     },
     {
-      "name": "init_pool_vault",
+      "name": "initPoolVault",
       "discriminator": [
         202,
         16,
@@ -195,18 +201,18 @@
           ]
         },
         {
-          "name": "pool_vault"
+          "name": "poolVault"
         }
       ],
       "args": [
         {
-          "name": "pool_id",
+          "name": "poolId",
           "type": "u64"
         }
       ]
     },
     {
-      "name": "init_reward_vault",
+      "name": "initRewardVault",
       "discriminator": [
         183,
         229,
@@ -231,12 +237,12 @@
           ]
         },
         {
-          "name": "reward_vault"
+          "name": "rewardVault"
         }
       ],
       "args": [
         {
-          "name": "pool_id",
+          "name": "poolId",
           "type": "u64"
         }
       ]
@@ -255,7 +261,7 @@
       ],
       "accounts": [
         {
-          "name": "program_state",
+          "name": "programState",
           "writable": true,
           "pda": {
             "seeds": [
@@ -286,7 +292,7 @@
           "signer": true
         },
         {
-          "name": "system_program",
+          "name": "systemProgram",
           "address": "11111111111111111111111111111111"
         }
       ],
@@ -310,7 +316,7 @@
           "writable": true
         },
         {
-          "name": "user_stake",
+          "name": "userStake",
           "writable": true,
           "pda": {
             "seeds": [
@@ -346,21 +352,21 @@
           "signer": true
         },
         {
-          "name": "token_mint"
+          "name": "tokenMint"
         },
         {
-          "name": "user_token_account",
+          "name": "userTokenAccount",
           "writable": true
         },
         {
-          "name": "pool_vault",
+          "name": "poolVault",
           "writable": true
         },
         {
-          "name": "token_program"
+          "name": "tokenProgram"
         },
         {
-          "name": "system_program",
+          "name": "systemProgram",
           "address": "11111111111111111111111111111111"
         }
       ],
@@ -370,7 +376,7 @@
           "type": "u64"
         },
         {
-          "name": "lock_duration",
+          "name": "lockDuration",
           "type": "i64"
         }
       ]
@@ -393,7 +399,7 @@
           "writable": true
         },
         {
-          "name": "user_stake",
+          "name": "userStake",
           "writable": true,
           "pda": {
             "seeds": [
@@ -428,22 +434,22 @@
           "writable": true,
           "signer": true,
           "relations": [
-            "user_stake"
+            "userStake"
           ]
         },
         {
-          "name": "token_mint"
+          "name": "tokenMint"
         },
         {
-          "name": "user_token_account",
+          "name": "userTokenAccount",
           "writable": true
         },
         {
-          "name": "pool_vault",
+          "name": "poolVault",
           "writable": true
         },
         {
-          "name": "token_program"
+          "name": "tokenProgram"
         }
       ],
       "args": [
@@ -456,7 +462,7 @@
   ],
   "accounts": [
     {
-      "name": "ProgramState",
+      "name": "programState",
       "discriminator": [
         77,
         209,
@@ -469,7 +475,7 @@
       ]
     },
     {
-      "name": "StakingPool",
+      "name": "stakingPool",
       "discriminator": [
         203,
         19,
@@ -482,7 +488,7 @@
       ]
     },
     {
-      "name": "UserStake",
+      "name": "userStake",
       "discriminator": [
         102,
         53,
@@ -498,73 +504,73 @@
   "errors": [
     {
       "code": 6000,
-      "name": "Unauthorized",
-      "msg": "Unauthorized"
+      "name": "unauthorized",
+      "msg": "unauthorized"
     },
     {
       "code": 6001,
-      "name": "InvalidLockPeriod",
+      "name": "invalidLockPeriod",
       "msg": "Invalid lock period"
     },
     {
       "code": 6002,
-      "name": "PoolCapacityExceeded",
+      "name": "poolCapacityExceeded",
       "msg": "Pool capacity exceeded"
     },
     {
       "code": 6003,
-      "name": "InvalidAmount",
+      "name": "invalidAmount",
       "msg": "Invalid amount"
     },
     {
       "code": 6004,
-      "name": "InsufficientStake",
+      "name": "insufficientStake",
       "msg": "Insufficient stake"
     },
     {
       "code": 6005,
-      "name": "StakeSlashed",
+      "name": "stakeSlashed",
       "msg": "Stake slashed"
     },
     {
       "code": 6006,
-      "name": "InvalidTokenMint",
+      "name": "invalidTokenMint",
       "msg": "Invalid token mint"
     },
     {
       "code": 6007,
-      "name": "PoolInactive",
+      "name": "poolInactive",
       "msg": "Pool inactive"
     },
     {
       "code": 6008,
-      "name": "InvalidPool",
+      "name": "invalidPool",
       "msg": "Invalid pool"
     },
     {
       "code": 6009,
-      "name": "InvalidPoolVault",
+      "name": "invalidPoolVault",
       "msg": "Invalid pool vault"
     },
     {
       "code": 6010,
-      "name": "ProgramPaused",
+      "name": "programPaused",
       "msg": "Program paused"
     },
     {
       "code": 6011,
-      "name": "InvalidTimestamp",
+      "name": "invalidTimestamp",
       "msg": "Timestamp error"
     },
     {
       "code": 6012,
-      "name": "MathOverflow",
+      "name": "mathOverflow",
       "msg": "Math overflow"
     }
   ],
   "types": [
     {
-      "name": "ProgramState",
+      "name": "programState",
       "type": {
         "kind": "struct",
         "fields": [
@@ -573,11 +579,11 @@
             "type": "pubkey"
           },
           {
-            "name": "total_pools",
+            "name": "totalPools",
             "type": "u64"
           },
           {
-            "name": "is_paused",
+            "name": "isPaused",
             "type": "bool"
           },
           {
@@ -588,24 +594,24 @@
       }
     },
     {
-      "name": "StakingPool",
+      "name": "stakingPool",
       "type": {
         "kind": "struct",
         "fields": [
           {
-            "name": "pool_id",
+            "name": "poolId",
             "type": "u64"
           },
           {
-            "name": "token_mint",
+            "name": "tokenMint",
             "type": "pubkey"
           },
           {
-            "name": "pool_vault",
+            "name": "poolVault",
             "type": "pubkey"
           },
           {
-            "name": "reward_vault",
+            "name": "rewardVault",
             "type": "pubkey"
           },
           {
@@ -613,35 +619,35 @@
             "type": "pubkey"
           },
           {
-            "name": "max_stake_amount",
+            "name": "maxStakeAmount",
             "type": "u64"
           },
           {
-            "name": "current_staked",
+            "name": "currentStaked",
             "type": "u64"
           },
           {
-            "name": "min_lock_period",
+            "name": "minLockPeriod",
             "type": "i64"
           },
           {
-            "name": "slashing_rate",
+            "name": "slashingRate",
             "type": "u16"
           },
           {
-            "name": "base_reward_rate",
+            "name": "baseRewardRate",
             "type": "u64"
           },
           {
-            "name": "performance_multiplier",
+            "name": "performanceMultiplier",
             "type": "u64"
           },
           {
-            "name": "created_at",
+            "name": "createdAt",
             "type": "i64"
           },
           {
-            "name": "is_active",
+            "name": "isActive",
             "type": "bool"
           },
           {
@@ -652,7 +658,7 @@
       }
     },
     {
-      "name": "UserStake",
+      "name": "userStake",
       "type": {
         "kind": "struct",
         "fields": [
@@ -661,35 +667,35 @@
             "type": "pubkey"
           },
           {
-            "name": "pool_id",
+            "name": "poolId",
             "type": "u64"
           },
           {
-            "name": "stake_amount",
+            "name": "stakeAmount",
             "type": "u64"
           },
           {
-            "name": "lock_duration",
+            "name": "lockDuration",
             "type": "i64"
           },
           {
-            "name": "staked_at",
+            "name": "stakedAt",
             "type": "i64"
           },
           {
-            "name": "lock_until",
+            "name": "lockUntil",
             "type": "i64"
           },
           {
-            "name": "last_claimed",
+            "name": "lastClaimed",
             "type": "i64"
           },
           {
-            "name": "pending_rewards",
+            "name": "pendingRewards",
             "type": "u64"
           },
           {
-            "name": "is_slashed",
+            "name": "isSlashed",
             "type": "bool"
           },
           {
@@ -700,4 +706,4 @@
       }
     }
   ]
-}
+};
